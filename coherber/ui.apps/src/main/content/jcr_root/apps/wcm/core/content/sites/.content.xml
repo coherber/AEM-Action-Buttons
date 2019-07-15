@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content jcr:primaryType="nt:unstructured">
+        <actions jcr:primaryType="nt:unstructured">
+            <selection jcr:primaryType="nt:unstructured">
+                <open
+                    granite:class="foundation-collection-action"
+                    granite:rel="cq-siteadmin-admin-actions-create-activator"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/pulldown"
+                    icon="open"
+                    text="Open in"
+                    variant="actionBar">
+                    <items jcr:primaryType="nt:unstructured">
+                        <openedit
+                            granite:rel="cq-siteadmin-admin-actions-edit-activator"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/collection/actionlink"
+                            action="cq.wcm.open"
+                            activeSelectionCount="multiple"
+                            icon="edit"
+                            target=".cq-siteadmin-admin-childpages"
+                            text="Edit mode">
+                            <data
+                                jcr:primaryType="nt:unstructured"
+                                href.uritemplate="/bin/wcmcommand?cmd=open&amp;_charset_=utf-8&amp;path={item}"/>
+                        </openedit>
+                        <openpublished
+                            granite:rel="cq-siteadmin-admin-actions-edit-activator"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/collection/actionlink"
+                            action="cq.wcm.open"
+                            activeSelectionCount="multiple"
+                            icon="viewOn"
+                            target=".cq-siteadmin-admin-childpages"
+                            text="Published mode">
+                            <data
+                                jcr:primaryType="nt:unstructured"
+                                cookiePath.url="/"
+                                href.uritemplate="\{+item}.html?wcmmode=disabled"/>
+                        </openpublished>
+                        <opencrx
+                            granite:rel="cq-siteadmin-admin-actions-edit-activator"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/collection/actionlink"
+                            action="cq.wcm.open"
+                            activeSelectionCount="multiple"
+                            icon="wrench"
+                            target=".cq-siteadmin-admin-childpages"
+                            text="CRX/DE">
+                            <data
+                                jcr:primaryType="nt:unstructured"
+                                href.uritemplate="/crx/de/index.jsp{#item}"/>
+                        </opencrx>
+                    </items>
+                </open>
+            </selection>
+        </actions>
+    </jcr:content>
+</jcr:root>
